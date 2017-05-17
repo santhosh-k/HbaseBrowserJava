@@ -1,3 +1,42 @@
-<p>
-  login works!
-</p>
+<section id="logo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>HBaseBrowser</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="connect">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <form id="connectForm">
+          <div class="form-group row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <input (value)="ipAddress" class="form-control" type="text" #ipAddress name="ipAddress" id="ipAddress" placeholder="Enter HBase IP"
+              /></div>
+            <div class="col-md-4">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-secondary form-control" name="connectBtn" id="connectBtn" (click)="connectToHBase(ipAddress.value)">Connect</button>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p id="connectStatus">{{ connectStatus }}</p>
+      </div>
+    </div>
+  </div>
+</section>
