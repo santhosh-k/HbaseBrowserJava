@@ -153,7 +153,9 @@ public class UserService {
 	public Response getHtables(@CookieParam("sessionId") Cookie cookie) {
 
 		Response response = null;
-
+		if(cookie==null){
+			return Response.status(Constants.STATUSOK).entity("Cookie not set").build();
+		}
 		Map<String, String> valueMap = sessionMap.get(cookie.getValue());
 		if (valueMap == null) {
 			response = CommonUtils
